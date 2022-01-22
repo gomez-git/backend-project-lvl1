@@ -1,0 +1,35 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "My first backend JavaScript project",
+  "bin": {
+    "brain-games": "bin/brain-games.js",
+    "brain-calc": "bin/brain-calc.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-prime": "bin/brain-prime.js",
+    "brain-progression": "bin/brain-progression.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gomez-git/backend-project-lvl1.git"
+  },
+  "author": "Konstantin Kuzin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gomez-git/backend-project-lvl1/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/gomez-git/backend-project-lvl1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
