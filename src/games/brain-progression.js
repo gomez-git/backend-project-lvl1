@@ -1,8 +1,7 @@
 import gameLogic from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const task = 'What number is missing in the progression?';
-const getArgs = () => {
+const getProgression = () => {
   const numbers = [];
   const lengthOfProgression = getRandomNumber(6, 10);
   const indexOfMissingNumber = getRandomNumber(0, lengthOfProgression - 1);
@@ -19,20 +18,29 @@ const getArgs = () => {
 
   return numbers;
 };
-const getMissingNumber = (coll) => {
-  const indexOfMissingNumber = coll.indexOf('..');
+const getMissingNumber = (progression) => {
+  const indexOfMissingNumber = progression.indexOf('..');
+  const lengthOfProgression = progression.length;
   let missingNumber;
 
-  if (indexOfMissingNumber !== 0 && indexOfMissingNumber !== coll.length - 1) {
-    missingNumber = (coll[indexOfMissingNumber - 1] + coll[indexOfMissingNumber + 1]) / 2;
+  if (indexOfMissingNumber !== 0 && indexOfMissingNumber !== lengthOfProgression - 1) {
+    missingNumber = (
+      (progression[indexOfMissingNumber - 1] + progression[indexOfMissingNumber + 1]) / 2
+    );
   } else {
-    const stepOfProgression = coll[2] - coll[1];
+    const secondNumber = progression[1];
+    const thirdNumber = progression[2];
+    const stepOfProgression = thirdNumber - secondNumber;
     missingNumber = indexOfMissingNumber === 0
-      ? coll[1] - stepOfProgression
-      : coll[coll.length - 2] + stepOfProgression;
+      ? secondNumber - stepOfProgression
+      : progression[lengthOfProgression - 2] + stepOfProgression;
   }
 
   return missingNumber;
 };
 
-export default () => gameLogic(task, getArgs, getMissingNumber);
+const task = 'What number is missing in the progression?';
+const getArgs = () => getProgression();
+const getCorrectAnswer = (progression) => getMissingNumber(progression);
+
+export default () => gameLogic(task, getArgs, getCorrectAnswer);
