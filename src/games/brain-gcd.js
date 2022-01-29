@@ -1,9 +1,7 @@
 import gameLogic from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const task = 'Find the greatest common divisor of given numbers.';
-const getArgs = () => [getRandomNumber(), getRandomNumber()];
-const getGcd = ([num1, num2]) => {
+const getGcd = (num1, num2) => {
   const lowestNumber = Math.min(num1, num2);
   let greastestDivisor;
   for (let i = 1; i <= lowestNumber; i += 1) {
@@ -15,4 +13,8 @@ const getGcd = ([num1, num2]) => {
   return greastestDivisor;
 };
 
-export default () => gameLogic(task, getArgs, getGcd);
+const task = 'Find the greatest common divisor of given numbers.';
+const getArgs = () => [getRandomNumber(), getRandomNumber()];
+const getCorrectAnswer = (args) => getGcd(...args);
+
+export default () => gameLogic(task, getArgs, getCorrectAnswer);
