@@ -1,3 +1,4 @@
+[![hexlet-check](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg?branch=main)](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/hexlet-check.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c1484f7a6f9a3cd37df2/maintainability)](https://codeclimate.com/github/gomez-git/backend-project-lvl1/maintainability)
 [![Linter](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/linter.yml/badge.svg?branch=main&event=push)](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/linter.yml)
 # Welcome to the Brain Games!
