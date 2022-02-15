@@ -43,7 +43,7 @@ const sayByeToUser = (userName, gameResult) => {
 
 export default (task, getArgs, getCorrectAnswer) => {
   const userName = greetUser();
-  say(`${task}`);
+  say(task);
   const gameResult = engine(getArgs, getCorrectAnswer);
   sayByeToUser(userName, gameResult);
 };
