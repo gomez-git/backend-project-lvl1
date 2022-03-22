@@ -1,16 +1,13 @@
-import getName, { getAnswer } from './cli.js';
+import { getUserName, getAnswer } from './cli.js';
 
 const say = console.log;
 
-export const greetUser = () => {
+export default (task, getArgs, getCorrectAnswer) => {
   say('Welcome to the Brain Games!');
-  const userName = getName();
+  const userName = getUserName();
   say(`Hello, ${userName}!`);
+  say(task);
 
-  return userName;
-};
-
-const engine = (getArgs, getCorrectAnswer) => {
   let gamesCount = 1;
   let gameResult;
 
@@ -21,29 +18,18 @@ const engine = (getArgs, getCorrectAnswer) => {
     const correctAnswer = getCorrectAnswer(args);
     const userAnswer = getAnswer();
     gameResult = `${userAnswer}` === `${correctAnswer}`;
+    gamesCount += 1;
 
     if (gameResult) {
       say('Correct!');
-      gamesCount += 1;
     } else {
       say(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
     }
   } while (gameResult && gamesCount <= 3);
 
-  return gameResult;
-};
-
-const sayByeToUser = (userName, gameResult) => {
   if (gameResult) {
     say(`Congratulations, ${userName}!`);
   } else {
     say(`Let's try again, ${userName}!`);
   }
-};
-
-export default (task, getArgs, getCorrectAnswer) => {
-  const userName = greetUser();
-  say(task);
-  const gameResult = engine(getArgs, getCorrectAnswer);
-  sayByeToUser(userName, gameResult);
 };
