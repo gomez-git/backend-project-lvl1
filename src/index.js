@@ -1,17 +1,18 @@
-import getName, { getAnswer } from './cli.js';
+import { getUserName, getAnswer } from './cli.js';
 
 const say = console.log;
 
 export const greetUser = () => {
   say('Welcome to the Brain Games!');
-  const userName = getName();
+  const userName = getUserName();
   say(`Hello, ${userName}!`);
 
   return userName;
 };
 
 const engine = (getArgs, getCorrectAnswer) => {
-  let gamesCount = 1;
+  const maxGames = 3;
+  let gamesCount = 0;
   let gameResult;
 
   do {
@@ -20,7 +21,7 @@ const engine = (getArgs, getCorrectAnswer) => {
 
     const correctAnswer = getCorrectAnswer(args);
     const userAnswer = getAnswer();
-    gameResult = `${userAnswer}` === `${correctAnswer}`;
+    gameResult = userAnswer === String(correctAnswer);
 
     if (gameResult) {
       say('Correct!');
@@ -28,7 +29,7 @@ const engine = (getArgs, getCorrectAnswer) => {
     } else {
       say(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
     }
-  } while (gameResult && gamesCount <= 3);
+  } while (gameResult && gamesCount < maxGames);
 
   return gameResult;
 };

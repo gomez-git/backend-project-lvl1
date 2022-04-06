@@ -2,7 +2,7 @@ import gameLogic from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const operators = ['+', '-', '*'];
-const getOperator = () => operators[getRandomNumber(0, 2)];
+const getOperator = () => operators[getRandomNumber(0, operators.length - 1)];
 const calcNumbers = (num1, operator, num2) => {
   switch (operator) {
     case '+':
