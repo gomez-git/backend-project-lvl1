@@ -3,10 +3,10 @@ install: # install dependencies
 	npm link
 
 brain-games: # run brain-games.js
-	node bin/brain-games.js
-
-publish: # publish npm package
-	npm publish --dry-run
+	@node bin/brain-games.js
 
 lint: # run eslint
-	npx eslint .
+	@npx eslint .
+
+publish: # publish npm package
+	@npm publish --dry-run
