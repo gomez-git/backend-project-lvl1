@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My first backend JavaScript project",
   "bin": {
     "brain-games": "bin/brain-games.js",
@@ -28,8 +28,8 @@
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "eslint": "^8.7.0",
+    "eslint": "^8.15.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4"
+    "eslint-plugin-import": "^2.26.0"
   }
 }
