@@ -1,7 +1,7 @@
 import gameLogic from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const operators = ['+', '-', '*'];
+const operators = ['+', '-', '*', '%'];
 const getOperator = () => operators[getRandomNumber(0, operators.length - 1)];
 const calcNumbers = (num1, operator, num2) => {
   switch (operator) {
@@ -9,8 +9,10 @@ const calcNumbers = (num1, operator, num2) => {
       return num1 + num2;
     case '-':
       return num1 - num2;
-    default:
+    case '*':
       return num1 * num2;
+    default:
+      return num1 % num2;
   }
 };
 
