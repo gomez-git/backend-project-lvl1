@@ -1,14 +1,10 @@
 {
   "name": "@hexlet/code",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "My first backend JavaScript project",
+  "type": "module",
   "bin": {
-    "brain-games": "bin/brain-games.js",
-    "brain-calc": "bin/brain-calc.js",
-    "brain-even": "bin/brain-even.js",
-    "brain-gcd": "bin/brain-gcd.js",
-    "brain-prime": "bin/brain-prime.js",
-    "brain-progression": "bin/brain-progression.js"
+    "brain-games": "bin/brain-games.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,13 +14,13 @@
     "url": "git+https://github.com/gomez-git/backend-project-lvl1.git"
   },
   "author": "Konstantin Kuzin",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gomez-git/backend-project-lvl1/issues"
   },
-  "type": "module",
   "homepage": "https://github.com/gomez-git/backend-project-lvl1#readme",
   "dependencies": {
+    "commander": "^9.2.0",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
