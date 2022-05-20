@@ -1,50 +1,53 @@
-import { getUserName, getAnswer } from './cli.js';
+import User from './entities/User.js';
+import MainMenu from './entities/menu/MainMenu.js';
 
-const say = console.log;
+const performUserAction = (input, menu) => {
+  const { actions, lines } = menu;
+  const property = lines.find((line) => line[1] === input);
+  const action = actions[property];
 
-export const greetUser = () => {
-  say('Welcome to the Brain Games!');
-  const userName = getUserName();
-  say(`Hello, ${userName}!`);
-
-  return userName;
+  return action();
 };
 
-const engine = (getArgs, getCorrectAnswer) => {
-  const maxGames = 3;
-  let gamesCount = 0;
-  let gameResult;
+const showMenuAndChooseGame = () => {
+  let menu = new MainMenu();
+  let Game;
 
-  do {
-    const args = getArgs();
-    say(`Question: ${args.join(' ')}`);
+  while (Game === undefined) {
+    const input = menu.askForUserAction();
+    const result = performUserAction(input, menu);
 
-    const correctAnswer = getCorrectAnswer(args);
-    const userAnswer = getAnswer();
-    gameResult = userAnswer === String(correctAnswer);
-
-    if (gameResult) {
-      say('Correct!');
-      gamesCount += 1;
-    } else {
-      say(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    switch (input) {
+      case 'c':
+      case 'b':
+      case 'q':
+        menu = result;
+        break;
+      default:
+        Game = result;
     }
-  } while (gameResult && gamesCount < maxGames);
+  }
+
+  return Game;
+};
+
+const playGame = (Game, gameOptions) => {
+  const game = new Game(gameOptions);
+  const gameResult = game.run();
 
   return gameResult;
 };
 
-const sayByeToUser = (userName, gameResult) => {
-  if (gameResult) {
-    say(`Congratulations, ${userName}!`);
-  } else {
-    say(`Let's try again, ${userName}!`);
-  }
-};
+export default ({ endless, ...gameOptions }) => {
+  const { maxRounds } = gameOptions;
+  const user = new User();
+  user.greetUser();
 
-export default (task, getArgs, getCorrectAnswer) => {
-  const userName = greetUser();
-  say(task);
-  const gameResult = engine(getArgs, getCorrectAnswer);
-  sayByeToUser(userName, gameResult);
+  do {
+    const Game = showMenuAndChooseGame();
+    const gameResult = playGame(Game, gameOptions);
+    if (maxRounds !== Infinity) {
+      user.sayByeToUser(gameResult);
+    }
+  } while (endless);
 };
