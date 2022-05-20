@@ -2,10 +2,11 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/gomez-git/backend-project-lvl1/badge.svg)](https://snyk.io/test/github/gomez-git/backend-project-lvl1)
 [![hexlet-check](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg?branch=main)](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/hexlet-check.yml)
 [![NodeCI](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/NodeCI.yml/badge.svg?branch=main)](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/NodeCI.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # Welcome to the Brain Games!
 This is my first JavaScript project based on hexlet backend courses. I built a collection of 15 brain games.
 
-This is the second version of games, the first version you can find [here](https://github.com/gomez-git/backend-project-lvl1/tree/v1.0.1).
+This is a second version of games, you can find first version [here](https://github.com/gomez-git/backend-project-lvl1/tree/v1.0.1).
 ## How to install
 ```bash
 git clone git@github.com:gomez-git/backend-project-lvl1.git
