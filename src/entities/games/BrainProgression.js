@@ -5,7 +5,7 @@ export default class BrainProgression extends Engine {
     super(options);
     this.task = 'What number is missing in the progression?';
     this.minStep = 6;
-    this.maxStep = 10;
+    this.maxStep = 9;
   }
 
   static findMissingNumber(progression) {
@@ -26,16 +26,15 @@ export default class BrainProgression extends Engine {
   getRandomArgs() {
     const firstNum = this.getRandomNum();
     const stepOfProgression = this.getRandomNum(this.minStep, this.maxStep);
-    const indexOfMissingNumber = this.getRandomNum(0, stepOfProgression - 1);
+    const lengthOfProgression = this.getRandomNum(this.minStep, this.maxStep);
+    const indexOfMissingNumber = this.getRandomNum(0, lengthOfProgression - 1);
 
-    return [...Array(stepOfProgression)]
-      .map((_a, i) => {
-        const num = firstNum + i * stepOfProgression;
-        if (i === indexOfMissingNumber) {
-          return '..';
-        }
-        return num;
-      });
+    return [...Array(lengthOfProgression)]
+      .map((_a, i) => (
+        i === indexOfMissingNumber
+          ? '..'
+          : firstNum + i * stepOfProgression
+      ));
   }
 
   getCorrectAnswer(progression) {
