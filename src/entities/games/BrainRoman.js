@@ -1,5 +1,4 @@
 import Engine from './Engine.js';
-import BrainArabic from './BrainArabic.js';
 
 export default class BrainRoman extends Engine {
   constructor(options) {
@@ -7,25 +6,41 @@ export default class BrainRoman extends Engine {
     this.task = 'Convert arabic number to roman.';
   }
 
-  static toRoman(arabicNum) {
-    return arabicNum
-      .split('')
-      .map((num) => BrainArabic.map[num])
-      .reduce((acc, num, i, arr) => (
-        num >= (arr[i + 1] ?? 0)
-          ? acc + num
-          : acc - num
-      ), 0);
+  static map = {
+    I: 1,
+    IV: 4,
+    V: 5,
+    IX: 9,
+    X: 10,
+    XL: 40,
+    L: 50,
+    XC: 90,
+    C: 100,
+    CD: 400,
+    D: 500,
+    CM: 900,
+    M: 1000,
+  };
+
+  static toRoman(num) {
+    let sum = 0;
+
+    return Object.entries(BrainRoman.map)
+      .reduceRight((acc, [roman, arabic]) => {
+        let result = '';
+        while (num - sum >= arabic) {
+          sum += arabic;
+          result = `${result}${roman}`;
+        }
+        return `${acc}${result}`;
+      }, '');
   }
 
   getRandomArgs() {
-    const num = this.getRandomNum();
-    const arabicNum = BrainArabic.toArabic(num);
-
-    return [arabicNum];
+    return [this.getRandomNum()];
   }
 
-  getCorrectAnswer([arabicNum]) {
-    return this.constructor.toRoman(arabicNum);
+  getCorrectAnswer([num]) {
+    return this.constructor.toRoman(num);
   }
 }
