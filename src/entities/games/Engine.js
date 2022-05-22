@@ -25,11 +25,13 @@ export default class Engine {
       const userAnswer = readlineSync.question('Your answer: ');
       gameResult = String(correctAnswer) === userAnswer;
 
-      if (gameResult) {
-        console.log('Correct!');
-        gameRound += 1;
-      } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      switch (gameResult) {
+        case true:
+          console.log('Correct!');
+          gameRound += 1;
+          break;
+        default:
+          console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       }
     } while (gameResult && gameRound <= this.maxRounds);
 
