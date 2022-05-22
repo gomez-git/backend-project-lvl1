@@ -26,8 +26,7 @@ export default class BrainArabic extends Engine {
     let sum = 0;
 
     return Object.entries(BrainArabic.map)
-      .reverse()
-      .reduce((acc, [arabic, roman]) => {
+      .reduceRight((acc, [arabic, roman]) => {
         let result = '';
         while (num - sum >= roman) {
           sum += roman;
