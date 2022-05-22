@@ -4,8 +4,6 @@ export default class BrainTime extends Engine {
   constructor(options) {
     super(options);
     this.task = 'Convert minutes to human-readable time.';
-    this.min = 0;
-    this.max = 1440;
   }
 
   static convertMinutes(timeInMinutes) {
@@ -17,7 +15,7 @@ export default class BrainTime extends Engine {
   }
 
   getRandomArgs() {
-    return [this.getRandomNum()];
+    return [this.getRandomNum(0, 1440)];
   }
 
   getCorrectAnswer([timeInMinutes]) {
