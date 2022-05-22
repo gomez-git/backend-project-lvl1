@@ -4,8 +4,6 @@ export default class BrainNRZI extends Engine {
   constructor(options) {
     super(options);
     this.task = 'Transform NRZI code to binary.';
-    this.min = 0;
-    this.max = 1;
   }
 
   static transformNRZItoBinary(nrzi) {
@@ -23,7 +21,7 @@ export default class BrainNRZI extends Engine {
 
   getRandomArgs() {
     return [...Array(10)]
-      .map(() => this.getRandomNum())
+      .map(() => this.getRandomNum(0, 1))
       .reduce((acc, num) => {
         const lastPosition = acc[acc.length - 1];
 
