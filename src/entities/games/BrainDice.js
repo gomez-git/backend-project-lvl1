@@ -5,8 +5,6 @@ export default class BrainDice extends Engine {
     super(options);
     this.task = 'A dice was rolled... Try to guess the number from 1 to 6.';
     this.mask = '*';
-    this.min = 1;
-    this.max = 6;
   }
 
   getRandomArgs() {
@@ -14,6 +12,6 @@ export default class BrainDice extends Engine {
   }
 
   getCorrectAnswer() {
-    return this.getRandomNum();
+    return this.getRandomNum(1, 6);
   }
 }

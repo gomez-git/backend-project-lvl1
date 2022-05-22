@@ -10,7 +10,8 @@ export default class BrainBalance extends Engine {
     const { length: digits } = str;
     const sum = str
       .split('')
-      .reduce((acc, n) => acc + Number(n), 0);
+      .map((digit) => Number(digit))
+      .reduce((acc, digit) => acc + digit, 0);
     const minNum = Math.floor(sum / digits);
     const upNums = sum % digits;
 

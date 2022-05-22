@@ -1,8 +1,7 @@
 import User from './entities/User.js';
 import MainMenu from './entities/menu/MainMenu.js';
 
-const performUserAction = (input, menu) => {
-  const { actions, lines } = menu;
+const performUserAction = (input, { actions, lines }) => {
   const property = lines.find((line) => line[1] === input);
   const action = actions[property];
 
@@ -20,7 +19,6 @@ const showMenuAndChooseGame = () => {
     switch (input) {
       case 'c':
       case 'b':
-      case 'q':
         menu = result;
         break;
       default:

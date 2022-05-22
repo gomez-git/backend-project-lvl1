@@ -3,7 +3,7 @@ import BrainAngles from './BrainAngles.js';
 import BrainArabic from './BrainArabic.js';
 import BrainBalance from './BrainBalance.js';
 import BrainCalc from './BrainCalc.js';
-import BrainCalcReversePolish from './BrainCalcReversePolish.js';
+import BrainCalcPolish from './BrainCalcPolish.js';
 import BrainDice from './BrainDice.js';
 import BrainGcd from './BrainGcd.js';
 import BrainMorse from './BrainMorse.js';
@@ -21,7 +21,7 @@ export default class Games {
     '[k] Brain Arabic': () => BrainArabic,
     '[l] Brain Balance': () => BrainBalance,
     '[;] Brain Calculator': () => BrainCalc,
-    '[f] Brain Calculator Reverse Polish': () => BrainCalcReversePolish,
+    '[f] Brain Calculator Polish': () => BrainCalcPolish,
     '[d] Brain Dice': () => BrainDice,
     '[s] Brain Greatest Common Divisor': () => BrainGcd,
     '[a] Brain Morse': () => BrainMorse,

@@ -3,7 +3,7 @@ import Engine from './Engine.js';
 export default class BrainPrime extends Engine {
   constructor(options) {
     super(options);
-    this.task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    this.task = 'Answer "yes" if given number is prime, otherwise answer "no".';
   }
 
   static isPrime(num) {

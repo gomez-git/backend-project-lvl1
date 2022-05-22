@@ -26,7 +26,7 @@ export default () => {
 
   program
     .description('A collection of 15 brain games')
-    .version('2.0.0', '-v, --version', 'output the version number')
+    .version('2.0.1', '-v, --version', 'output the version number')
     .option('-e, --endless', 'play games endless', defaultEndless)
     .option('-o, --no-endless', 'play one game')
     .option(

@@ -4,10 +4,11 @@
 [![NodeCI](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/NodeCI.yml/badge.svg?branch=main)](https://github.com/gomez-git/backend-project-lvl1/actions/workflows/NodeCI.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # Welcome to the Brain Games!
-This is my first JavaScript project based on hexlet backend courses. I built a collection of 15 brain games.
+This is my first JavaScript project based on Hexlet backend courses. I built a collection of 15 brain games.
 
 This is a second version of games, you can find first version [here](https://github.com/gomez-git/backend-project-lvl1/tree/v1.0.1).
-## How to install
+## Quick start
+Copy this commands and paste in a terminal, note that clone command using ssh.
 ```bash
 git clone git@github.com:gomez-git/backend-project-lvl1.git
 cd backend-project-lvl1
@@ -15,8 +16,10 @@ make install
 brain-games -h
 
 ```
-## How to use
-Brain games is a CLI utility with 15 games inside. You can play games endless or not, define maximum rounds you want to play each game and define minimum and maximum numbers which will be used in games (some games doesn't support this option).
+## Description
+Brain games is a CLI utility with 15 games inside.
+
+You can play games endless or not, define maximum rounds you want to play each game and define minimum and maximum numbers which will be used in games (some games doesn't support this option).
 ```bash
 $ brain-games -h
 Usage: brain-games [options]
