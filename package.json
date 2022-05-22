@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "My first backend JavaScript project",
   "type": "module",
   "bin": {
@@ -24,7 +24,7 @@
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "eslint": "^8.15.0",
+    "eslint": "^8.16.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0"
   }
